@@ -1,9 +1,12 @@
-name = ("oaien")
-age = 20
+name = "Jobayed"
+age = "24"
+cgpa = "3.44"
+city = "ctg"
 
 
+print("=== Student Info Card ===")
+print("Name   :", name)
+print("Age    :", age)
+print("CGPA    :", cgpa)
+print("city     :", city)
 
-print ("amer" + name + "from bangladesh")
-print ("amer name oaien"+ name + "from dhaka")
-print ("amer",age ,   "live in ctg.")
-print ("amer",age , "dhaka.")
