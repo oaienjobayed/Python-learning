@@ -51,3 +51,10 @@ elif has_ticket != "y":
     print("buy a ticket first")
 else:
     print("sorry! ur age is under 18")
+
+#evenodd
+num = 4
+if (num % 2) == 0:
+    print("even")
+else:
+    print("odd")
