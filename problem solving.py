@@ -1,38 +1,71 @@
-name = input("Enter your name: ")
-age = int(input("Enter your age: "))
-amount = float(input("Enter your amount: "))
-member = input("do u have membership id? (y/n) ").lower()
+balance = 10000
+attempts = 0
+transactions = 0
+total_withdrawn = 0
 
-if age <= 0:
-    print("Wrong age")
+password = input("password: ")
 
-elif amount <= 0:
-    print("Wrong amount")
+while password != "1234" and attempts < 2:
+    attempts = attempts + 1
+    print(f"wrong password! you can try {3 - attempts - 1} more times")
+    password = input("password: ")
 
-else:
-    if member == "y" and amount >= 2000:
-        discount = amount * 0.15
-        print(f"congrats! u have received 15% Discount {discount}")
+if password != "1234":
+    print("wrong password! your acc is blocked")
+    exit()
 
-    elif member == "y":
-        discount = amount * 0.05
-        print(f"congrats! u have received 5% Discount {discount}")
+print("login successful")
 
-    elif member == "n" and amount >= 2000:
-        discount = amount * 0.10
-        print(f"congrats! u have received 10% Discount {discount}")
+while True:
+    print("\n1. check balance")
+    print("2. withdraw money")
+    print("3. cash in")
+    print("4. exit")
+
+    choice = input("your choice (1/4): ")
+
+    if choice == "1":
+        print(f"your balance is {balance}")
+
+    elif choice == "2":
+        amount = int(input("enter amount: "))
+        if amount <= 0:
+            print("wrong amount, give the correct amount")
+        elif amount % 500 != 0:
+            print("you can only withdraw multiples of 500")
+        elif amount > 5000:
+            print("you cannot withdraw more than 5000")
+        elif amount > balance:
+            print("you do not have enough money")
+        else:
+            balance = balance - amount
+            transactions += 1
+            total_withdrawn += amount
+            print(f"withdraw successful! new balance is {balance}")
+
+    elif choice == "3":
+        amount = int(input("enter amount: "))
+        if amount <= 0:
+            print("wrong amount, give the correct amount")
+        else:
+            balance = balance + amount
+            transactions += 1
+            print(f"{amount} cash in successfully")
+
+    elif choice == "4":
+        print("Thank you!")
+        print(f"total transactions: {transactions}")
+        print(f"total withdrawn: {total_withdrawn} tk")
+        break
 
     else:
-        discount = 0
-        print("sorry! u do not have any discount")
+        print("wrong choice, select from 1-4")
 
-    if age >= 60:
-        extra = amount * 0.05
-        discount = discount + extra
-        print(f"senior citizen extra 5% Discount {extra}")
 
-    total = amount - discount
-    print(f"the payment is successful, you have to pay {total}")
+
+
+
+
 
 
 
