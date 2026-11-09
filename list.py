@@ -1,38 +1,24 @@
-fruits = ["আম", "জাম"]
+numbers = []
+even = []
+odd = []
 
-fruits.append("কলা")        # শেষে যোগ করা
-print(fruits)               # ['আম', 'জাম', 'কলা']
-
-fruits.insert(1, "পেয়ারা")  # ১ নম্বর জায়গায় বসানো
-print(fruits)               # ['আম', 'পেয়ারা', 'জাম', 'কলা']
-
-fruits.remove("জাম")        # নাম ধরে মুছা
-print(fruits)               # ['আম', 'পেয়ারা', 'কলা']
-
-fruits.pop()                # শেষেরটা মুছে ফেলে
-print(fruits)               # ['আম', 'পেয়ারা']
-
-###############
-marks = [78, 85, 62, 90]
-
-print(len(marks))     # 4  (কয়টা জিনিস)
-print(max(marks))     # 90
-print(min(marks))     # 62
-print(sum(marks))     # 315
-print(sum(marks) / len(marks))   # 78.75 (গড়)
-print(sorted(marks))  # [62, 78, 85, 90]
-
-##############################
-marks = []
-n = int(input("how many subjet: "))
+n = int(input("how many number: "))
 
 count = 1
 while count <= n:
-    m = int(input(f"{count} subject number"))
-    marks.append(m)
-    count = count + 1
+    num = int(input(f"{count} number value: "))
+    numbers.append(num)
+    count += 1
 
-print(marks)
-print(max(marks))
-print(min(marks))
-print(f"{sum(marks)/len(marks)}")
+i = 0
+while i < len(numbers):
+    if numbers[i] % 2 == 0:
+        even.append(numbers[i])
+    else:
+        odd.append(numbers[i])
+    i = i + 1              # ঠিক: loop-এর ভেতরে, if/else-এর বাইরে (৪ space)
+
+print(numbers)             # ঠিক: loop-এর বাইরে (০ space)
+print(even)
+print(odd)
+print(sum(even))
