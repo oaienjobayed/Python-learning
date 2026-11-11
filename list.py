@@ -15,7 +15,7 @@ while i<len(names):
     if names[i] == search:
         print(f"{search} is exit. in {i+1} no place")
         found = True
-        i = i + 1
+    i = i + 1
 
-    if found == False:
-        print(f"{search} is not found.")
+if found == False:
+    print(f"{search} is not found.")
