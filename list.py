@@ -1,24 +1,21 @@
-numbers = []
-even = []
-odd = []
-
-n = int(input("how many number: "))
+names = []
+n = int(input("how many people name you want to add?"))
 
 count = 1
 while count <= n:
-    num = int(input(f"{count} number value: "))
-    numbers.append(num)
-    count += 1
+    name=input(f"{count} number name: ")
+    names.append(name)
+    count = count + 1
 
+search = input("Find your name: ")
+
+found = False
 i = 0
-while i < len(numbers):
-    if numbers[i] % 2 == 0:
-        even.append(numbers[i])
-    else:
-        odd.append(numbers[i])
-    i = i + 1              # ঠিক: loop-এর ভেতরে, if/else-এর বাইরে (৪ space)
+while i<len(names):
+    if names[i] == search:
+        print(f"{search} is exit. in {i+1} no place")
+        found = True
+        i = i + 1
 
-print(numbers)             # ঠিক: loop-এর বাইরে (০ space)
-print(even)
-print(odd)
-print(sum(even))
+    if found == False:
+        print(f"{search} is not found.")
